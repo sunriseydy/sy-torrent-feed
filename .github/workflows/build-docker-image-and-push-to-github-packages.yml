@@ -23,7 +23,11 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
+          overwrite-settings: false
           cache: maven
+
+      - name: Set up Maven
+        uses: s4u/maven-settings-action@v3.0.0
 
       - name: Build with Maven
         run: mvn -B package --file pom.xml
