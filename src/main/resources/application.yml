@@ -1,0 +1,10 @@
+server:
+  port: ${SY_PORT:9009}
+
+sy:
+  torrent-feed:
+    path: ${SY_TORRENT_FEED_PATH:/tmp/torrent}
+
+logging:
+  level:
+    dev.sunriseydy.feed: ${SY_LOG_LEVEL:INFO}
