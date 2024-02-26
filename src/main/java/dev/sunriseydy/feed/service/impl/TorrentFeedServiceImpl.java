@@ -137,7 +137,9 @@ public class TorrentFeedServiceImpl implements TorrentFeedService {
         torrentClosure.setType(FILE_TYPE);
         // torrent 文件的下载链接
         torrentClosure.setUrl(item.getLink());
-        torrentClosure.setLength(torrent.getTotalSize());
+        if (torrent.getTotalSize() != null) {
+            torrentClosure.setLength(torrent.getTotalSize());
+        }
         item.setEnclosures(List.of(torrentClosure));
         Description description = new Description();
         item.setDescription(description);
